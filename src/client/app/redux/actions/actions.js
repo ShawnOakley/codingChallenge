@@ -9,10 +9,10 @@ import {
   TOGGLE_LOADING
 } from '../../constants/actions'
 import {
-    createAsyncCreator,
-    createTimedAsyncCreator
-} from '../../services/asyncCreators';
-import * as api from '../../services/api';
+  createAsyncCreator,
+  createTimedAsyncCreator
+} from '../../services/asyncCreators'
+import * as api from '../../services/api'
 
 export const setUserAction = userObject => (
   createAction(SET_USER)(userObject)
@@ -46,17 +46,17 @@ export const signUpAction = (username, pass, dispatch) => (
   createAsyncCreator(
     TOGGLE_LOADING,
     TOGGLE_LOADING,
-    () => api.signUp(username, pass),
+    () => api.signUp(username, pass)
   )
-);
+)
 
 export const logInAction = (username, pass) => (
   createAsyncCreator(
     TOGGLE_LOADING,
     TOGGLE_LOADING,
-    () => api.logIn(username, pass),
+    () => api.logIn(username, pass)
   )
-);
+)
 
 export const showMessageAction = (message, delay) => (
   createTimedAsyncCreator({
@@ -64,7 +64,6 @@ export const showMessageAction = (message, delay) => (
     startOptions: {message},
     endAction: HIDE_NOTIFICATION,
     endOptions: {},
-    asycnFn: () => setTimeout(()=>{console.log("called")}, delay)
+    asycnFn: () => setTimeout(() => { console.log('called') }, delay)
   })
-);
-
+)

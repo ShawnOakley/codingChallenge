@@ -4,7 +4,7 @@ import TextField from 'material-ui/TextField'
 import Paper from 'material-ui/Paper'
 import AppBar from 'material-ui/AppBar'
 import IconButton from 'material-ui/IconButton'
-import CircularProgress from 'material-ui/CircularProgress';
+import CircularProgress from 'material-ui/CircularProgress'
 import NavigationClose from 'material-ui/svg-icons/navigation/close'
 import validationWrapper from '../../utils/validation'
 import {
@@ -13,23 +13,22 @@ import {
   logIn
 } from '../../services/api'
 
-
 const styles = {
   paper: {
-      padding: 20,
-      margin: 20,
-      textAlign: 'center',
-      display: 'inline-block',
-      backgroundColor: '#d3d3d3'
-    },
-    buttonRow: {
-        display: "flex",
-        flexDirection: "column"
-    },
-    button: {
-        marginTop: "1rem"
-    }
-};
+    padding: 20,
+    margin: 20,
+    textAlign: 'center',
+    display: 'inline-block',
+    backgroundColor: '#d3d3d3'
+  },
+  buttonRow: {
+    display: 'flex',
+    flexDirection: 'column'
+  },
+  button: {
+    marginTop: '1rem'
+  }
+}
 
 export default class FormComponent extends React.Component {
   constructor (props) {
@@ -62,25 +61,25 @@ export default class FormComponent extends React.Component {
     } = this.state
 
     if (!this.checkErrors()) {
-      toggleLoading();
+      toggleLoading()
       logIn(username, password).then((response) => {
-          return response.json();
-        }).then((response) => {
-            const {
-                status,
-                message,
-                userId,
-                name
-            } = response;
-            toggleLoading();
-            if (status > 0) {
-                setUser({userId, name: username, fullName: name, message});
-                showNotification({message});
-                history.push("/home")
-            } else {
-                showError({ error: message });
-            }
-      });
+        return response.json()
+      }).then((response) => {
+        const {
+          status,
+          message,
+          userId,
+          name
+        } = response
+        toggleLoading()
+        if (status > 0) {
+          setUser({userId, name: username, fullName: name, message})
+          showNotification({message})
+          history.push('/home')
+        } else {
+          showError({ error: message })
+        }
+      })
     }
   }
 
@@ -103,25 +102,25 @@ export default class FormComponent extends React.Component {
     } = this.state
 
     if (!this.checkErrors()) {
-      toggleLoading();
+      toggleLoading()
       signUp(username, password, firstName, lastName).then((response) => {
-          return response.json();
-        }).then((response) => {
-            const {
-                status,
-                message,
-                userId
-            } = response;
-            toggleLoading();
-            if (status > 0) {
-                let name = `${firstName} ${lastName}`
-                setUser({userId, name: username, fullName: name, message});
-                showNotification({message});
-                history.push("/home")
-            } else {
-                showError({ error: message });
-            }
-      });
+        return response.json()
+      }).then((response) => {
+        const {
+          status,
+          message,
+          userId
+        } = response
+        toggleLoading()
+        if (status > 0) {
+          let name = `${firstName} ${lastName}`
+          setUser({userId, name: username, fullName: name, message})
+          showNotification({message})
+          history.push('/home')
+        } else {
+          showError({ error: message })
+        }
+      })
     }
   }
 
@@ -150,8 +149,8 @@ export default class FormComponent extends React.Component {
       lastName
     } = this.state
     const {
-        isLoading
-    } = this.props;
+      isLoading
+    } = this.props
 
     const inputFields = (<div>
       <div>
@@ -162,10 +161,10 @@ export default class FormComponent extends React.Component {
           errorText={usernameError}
           onChange={event => this.setState({ username: event.target.value.trim() })}
           onBlur={() => {
-              this.setState({
-                usernameError: validationWrapper('username', username)
-              })
-            }
+            this.setState({
+              usernameError: validationWrapper('username', username)
+            })
+          }
           }
         />
       </div>
@@ -214,7 +213,7 @@ export default class FormComponent extends React.Component {
           style={styles.button}
         />
       </div>
-  </div>);
+    </div>)
 
     return (<Paper style={styles.paper} zDepth={2}>
       <div>

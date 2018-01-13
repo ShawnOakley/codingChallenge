@@ -10,7 +10,7 @@ The app requires an active json-server to function.
 
 To run the app, 
 
-1) go to the project and directory and make sure npm modules are installed (`npm install`)
+1) clone the project and in the root directory make sure npm modules are installed (`npm install`)
 2) In two separate terminals, run the following commands:
     `npm run api` (starts the json-server backend)  AND  
     `npm run start`(starts webpack dev server)

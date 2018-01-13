@@ -11,23 +11,21 @@ export const signUp = async (username, pass, firstName, lastName) => {
       },
       method: 'post',
       body: JSON.stringify({ username, pass, firstName, lastName })
-    });
+    })
   } catch (error) {
-    return error.toString();
+    return error.toString()
   }
 }
-
 
 export const logIn = async (username, pass) => {
   const urlString = 'http://localhost:3000/login' + '?username=' + username + '&hash=' + MD5(pass)
   try {
     return await window.fetch(urlString, {
-      method: 'post',
-    });
+      method: 'post'
+    })
   } catch (error) {
-    return error.toString();
+    return error.toString()
   }
-
 }
 
 export const getUsers = async (username, pass) => {

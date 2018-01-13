@@ -11,7 +11,7 @@ import {
 } from '../../redux/actions/actions'
 
 const mapStateToProps = state => ({
-    isLoading: state.ui.loadingState.showLoading
+  isLoading: state.ui.loadingState.showLoading
 })
 
 const mapActionsToProps = dispatch => ({
@@ -32,10 +32,7 @@ const mapActionsToProps = dispatch => ({
   },
   hideError () {
     return dispatch(hideErrorAction())
-  },
-  triggerMessage (message, delay) {
-    return showMessageAction(message, delay);
   }
 })
 
-export const FormComponentContainer = withRouter(connect(mapStateToProps, mapActionsToProps)(FormComponent));
+export const FormComponentContainer = withRouter(connect(mapStateToProps, mapActionsToProps)(FormComponent))

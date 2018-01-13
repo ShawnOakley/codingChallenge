@@ -1,44 +1,44 @@
 import React from 'react'
-import Snackbar from 'material-ui/Snackbar';
+import Snackbar from 'material-ui/Snackbar'
 
 const styles = {
-    errorStyle: {
-        backgroundColor: "red"
-    }
+  errorStyle: {
+    backgroundColor: 'red'
+  }
 }
 
 export default class NotificationComponent extends React.Component {
   render () {
     const {
-        currentAction
-    } = this.props;
+      currentAction
+    } = this.props
     const {
-        actionType,
-        errorIsActive,
-        notificationIsActive,
-        options
+      actionType,
+      errorIsActive,
+      notificationIsActive,
+      options
     } = currentAction
 
     const notification = notificationIsActive ? (
-        <Snackbar
-          open={notificationIsActive}
-          message={options.message}
-          autoHideDuration={4000}
-        />
-    ) : undefined;
+      <Snackbar
+        open={notificationIsActive}
+        message={options.message}
+        autoHideDuration={4000}
+      />
+    ) : undefined
 
     const errorNotification = errorIsActive ? (
-        <Snackbar
-          bodyStyle={styles.errorStyle}
-          open={errorIsActive}
-          message={options.error}
-          autoHideDuration={4000}
-        />
-    ) : undefined;
+      <Snackbar
+        bodyStyle={styles.errorStyle}
+        open={errorIsActive}
+        message={options.error}
+        autoHideDuration={4000}
+      />
+    ) : undefined
 
     return (<div>
-        {notification}
-        {errorNotification}
-    </div>);
+      {notification}
+      {errorNotification}
+    </div>)
   }
 }
