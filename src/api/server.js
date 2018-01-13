@@ -6,6 +6,7 @@ var middlewares = jsonServer.defaults()
 server.use(middlewares)
 server.use(jsonServer.bodyParser)
 
+// Endpoint to generate new users
 server.post('/users', function (req, res) {
     res.setHeader('Content-Type', 'application/json');
   var db = router.db // lowdb instance
@@ -28,6 +29,7 @@ server.post('/users', function (req, res) {
     })
 })
 
+// Endpoint to check for presence of user and return true status if user and hash agree with json-server
 server.post('/login', function (req, res) {
     res.setHeader('Content-Type', 'application/json');
   var db = router.db // lowdb instance

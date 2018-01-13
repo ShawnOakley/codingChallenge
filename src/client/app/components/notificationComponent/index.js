@@ -7,10 +7,15 @@ const styles = {
   }
 }
 
+// Component used to manage notifications for the app
+// UI reducer toggles
+
 export default class NotificationComponent extends React.Component {
   render () {
     const {
-      currentAction
+      currentAction,
+      hideNotification,
+      hideError
     } = this.props
     const {
       actionType,
@@ -18,12 +23,15 @@ export default class NotificationComponent extends React.Component {
       notificationIsActive,
       options
     } = currentAction
-
+    // hideNotification and hideError are called by onRequestClose so
+    // that the reducer ui active state is toggled back to 'false'
+    // once the notification/alert is no longer needed
     const notification = notificationIsActive ? (
       <Snackbar
         open={notificationIsActive}
         message={options.message}
         autoHideDuration={4000}
+        onRequestClose={hideNotification}
       />
     ) : undefined
 
@@ -33,6 +41,7 @@ export default class NotificationComponent extends React.Component {
         open={errorIsActive}
         message={options.error}
         autoHideDuration={4000}
+        onRequestClose={hideError}
       />
     ) : undefined
 

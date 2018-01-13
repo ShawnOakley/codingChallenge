@@ -1,7 +1,7 @@
 import React from 'react'
 import {render} from 'react-dom'
 import { Provider } from 'react-redux'
-// React Router v4
+// Uses React Router v4
 import {
   BrowserRouter,
   Route,
@@ -53,6 +53,8 @@ export class Root extends React.Component {
       Home: HomeComponentContainer,
       NotificationHandler: NotificationComponentContainer
     }
+    // Made root modular, so that different components can be swapped out for various 'roles'
+    // i.e., nav bar, signIn page, home page
     return this.renderRoot(componentDescriptor)
   }
 }

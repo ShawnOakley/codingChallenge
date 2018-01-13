@@ -202,19 +202,20 @@ export default class FormComponent extends React.Component {
       <div style={styles.buttonRow}>
         <RaisedButton
           onClick={this.login.bind(this)}
-          disabled={usernameError || passwordError}
+          disabled={!!(usernameError || passwordError)}
           label="Login"
           style={styles.button}
         />
         <RaisedButton
           onClick={this.register.bind(this)}
-          disabled={usernameError || passwordError}
+          disabled={!!(usernameError || passwordError)}
           label="Register"
           style={styles.button}
         />
       </div>
     </div>)
 
+    // Conditionally renders form or loading indicator based on ui state
     return (<Paper style={styles.paper} zDepth={2}>
       <div>
         <AppBar
