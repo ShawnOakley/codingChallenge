@@ -2,8 +2,9 @@
 
 ### Question 1
 
-The specs were implemented using react, react-rotuer, redux, webpack, and material-ui, along with other assorted 
-libraries. No templates were used -- I just started with an empty package.json and installed libraries as necessary.
+The specs were implemented using react, react-router, redux, rambda, es-lint, webpack, and material-ui, along with 
+other assorted libraries. No templates were used -- I just started with an empty package.json and installed 
+libraries as necessary.
 
 The app requires an active json-server to function.  
 
