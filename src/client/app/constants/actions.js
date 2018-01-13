@@ -1,0 +1,7 @@
+export const SHOW_NOTIFICATION = 'SHOW_NOTIFICATION'
+export const HIDE_NOTIFICATION = 'HIDE_NOTIFICATION'
+export const SHOW_ERROR = 'SHOW_ERROR'
+export const HIDE_ERROR = 'HIDE_ERROR'
+export const SET_USER = 'SET_USER'
+export const REMOVE_USER = 'REMOVE_USER'
+export const TOGGLE_LOADING = 'TOGGLE_LOADING'
