@@ -11,7 +11,7 @@ To run the app,
 
 1) go to the project and directory and make sure npm modules are installed (`npm install`)
 2) In two separate terminals, run the following commands:
-    `npm run api` (starts the json-server backend)
+    `npm run api` (starts the json-server backend)  AND  
     `npm run start`(starts webpack dev server)
 3) The app should be available at localhost:8080
     
